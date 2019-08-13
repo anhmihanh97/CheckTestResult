@@ -17,6 +17,19 @@ public class TestResultUtils {
 		}
 		return index;
 	}
+	
+	public static Integer getColumnIndexByName2(Row headerRow, String text1, String text2) {
+		Integer index = null; 
+		for (int cn = 0; cn < headerRow.getLastCellNum(); cn++) {
+			Cell c = headerRow.getCell(cn);
+			if (c.getStringCellValue().contains(text1) && c.getStringCellValue().contains(text2)) {
+				index = cn;
+				break;
+			}
+		}
+		return index;
+	}
+	
 	// check name, neu rong va khong chua du5 tra ve false
 	public static boolean isBelongToCMC(String testerName) {
 		if (StringUtils.isEmpty(testerName)) {

@@ -1,5 +1,10 @@
 package vn.com.cmcglobal.dto;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
+
 public class TestCaseDTO {
 	private int id;// id tese case column(B)
 	private String firstTime;// column(CK)
@@ -17,6 +22,39 @@ public class TestCaseDTO {
 	private String peripheralDeviceNumber;
 	private String component; // thanh phan
 	private String testerName; // nguoi test
+	private String passTestResult; 
+	private String changeType;
+	private String imTime;
+	private MultipartFile file;
+	// @DateTimeFormat(pattern = "yyyy/MM/dd")
+	// @DateTimeFormat(pattern = "yyyy/MM/dd")
+	private String DateStart;
+	private String DateEnd;
+	private String ST;
+	
+	public String getST() {
+		return ST;
+	}
+
+	public void setST(String sT) {
+		ST = sT;
+	}
+
+	public String getDateEnd() {
+		return DateEnd;
+	}
+
+	public void setDateEnd(String dateEnd) {
+		DateEnd = dateEnd;
+	}
+
+	public String getDateStart() {
+		return DateStart;
+	}
+
+	public void setDateStart(String startTime) {
+		this.DateStart = startTime;
+	}
 
 	public int getId() {
 		return id;
@@ -144,6 +182,38 @@ public class TestCaseDTO {
 
 	public void setTesterName(String testerName) {
 		this.testerName = testerName;
+	}
+
+	public String getPassTestResult() {
+		return passTestResult;
+	}
+
+	public void setPassTestResult(String passTestResult) {
+		this.passTestResult = passTestResult;
+	}
+
+	public String getChangeType() {
+		return changeType;
+	}
+
+	public void setChangeType(String changeType) {
+		this.changeType = changeType;
+	}
+
+	public String getImTime() {
+		return imTime;
+	}
+
+	public void setImTime(String imTime) {
+		this.imTime = imTime;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 }
